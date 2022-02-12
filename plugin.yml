@@ -1,0 +1,5 @@
+name: TNTTimer
+version: 1.0.0
+authors: ["Laith98Dev", "Neckitta"]
+main: Laith98Dev\TNTTimer\Main
+api: 4.0.0
