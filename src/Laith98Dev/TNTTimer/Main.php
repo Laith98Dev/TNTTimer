@@ -47,6 +47,7 @@ use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\world\World;
+use pocketmine\utils\Random;
 
 use Laith98Dev\TNTTimer\entity\TimeTNT;
 
@@ -69,8 +70,9 @@ class Main extends PluginBase implements Listener {
 			$tnt = new TimeTNT(Location::fromObject($block->getPosition()->add(0.5, 0, 0.5), $block->getPosition()->getWorld()));
 			$tnt->setFuse(80);
 			$tnt->setWorksUnderwater(false);
-			// $tnt->setMotion(new Vector3(-sin($mot) * 0.05, 0.2, -cos($mot) * 0.05));
-			$tnt->setMotion(new Vector3(-sin(2.2431915802349) * 0.02, 0.2, -cos(2.2431915802349) * 0.02));
+			$mot = (new Random())->nextSignedFloat() * M_PI * 2;
+			$tnt->setMotion(new Vector3(-sin($mot) * 0.02, 0.2, -cos($mot) * 0.02));
+			// $tnt->setMotion(new Vector3(-sin(2.2431915802349) * 0.02, 0.2, -cos(2.2431915802349) * 0.02));
 			$tnt->setOwningEntity($player);
 			$tnt->mircotime = microtime(true) + 4.1;
             $tnt->setNameTagAlwaysVisible();
