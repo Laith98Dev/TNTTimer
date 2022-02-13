@@ -55,7 +55,7 @@ class TimeTNT extends Entity implements Explosive {
     
     public static function getNetworkTypeId() : string{ return EntityIds::TNT; }
 
-    public $width = 0.97;
+    public $width = 0.98;
     public $height = 0.98;
 
     protected $baseOffset = 0.49;
